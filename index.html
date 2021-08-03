@@ -49,6 +49,7 @@
             // console.log(data)
             fetch('https://dzilla.herokuapp.com/api/users/profile', {
                 method: 'POST', // or 'PUT'
+                mode: 'cors',
                 headers: {
                     'Content-Type': 'application/json',
                     "Authorization" : token
