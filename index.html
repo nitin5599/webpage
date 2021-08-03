@@ -23,14 +23,14 @@
         // }).then(data => {
             const res =  response.json()
             console.log('response - ',res);
-            var result = res.filter(x => x._id == id);
-            console.log('result is - ', result)
-            // data.forEach(function(item, index){
-            //     if(data[index]._id == id){
-            //         console.log('name is ',data[index].name);
-            //         window.document.getElementById('userid').innerHTML = data[index].name; 
-            //     }
-            // });
+            // var result = res.filter(x => x._id == id);
+            // console.log('result is - ', result)
+            data.forEach((item, index)=>{
+                if(item[index]._id == id){
+                    console.log('name is ',item[index].name);
+                    window.document.getElementById('userid').innerHTML = item[index].name; 
+                }
+            });
   
         }).catch(err => {
             console.log(err)
