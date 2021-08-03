@@ -43,7 +43,7 @@
         function myFunction() {
             var val=document.querySelector("input[name=wallet]").value;
             // alert(eventCategory);
-            const data = { wallet: val };
+            const data = { _id: id, wallet: val };
             // console.log(data)
             fetch('https://dzilla.herokuapp.com/api/users/profile', {
                 method: 'POST', // or 'PUT'
