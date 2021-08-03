@@ -23,9 +23,9 @@
         }).then(data => {
             console.log(data);
             data.forEach(function(item, index){
-                if(item[index]._id == id){
-                    console.log('name is ',item[index].name);
-                    window.document.getElementById('userid').innerHTML = item[index].name; 
+                if(data[index]._id == id){
+                    console.log('name is ',data[index].name);
+                    window.document.getElementById('userid').innerHTML = data[index].name; 
                 }
             });
   
