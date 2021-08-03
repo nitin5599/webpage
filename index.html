@@ -15,13 +15,21 @@
     <script type="text/javascript">
         let params = new URLSearchParams(document.location.search.substring(1));
         const id = params.get("id");
-        window.document.getElementById('userid').innerHTML = id; 
+        // window.document.getElementById('userid').innerHTML = id; 
         console.log('id is ',id)    
         var apiUrl = 'https://dzilla.herokuapp.com/api/users/';
         fetch(apiUrl).then(response => {
             return response.json();
         }).then(data => {
             console.log(data);
+            data.forEach(function(item){
+                if(item.userId == id){
+                    console.log('name is ',item.name);
+                    window.document.getElementById('userid').innerHTML = item.name; 
+                    break; 
+                }
+            });
+  
         }).catch(err => {
             console.log(err)
         });
