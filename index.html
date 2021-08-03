@@ -39,7 +39,8 @@
 
         const data = { wallet: document.getElementsByName('wallet').values() };
         // const value = data[0].value;
-        function myFunction() {
+        function myFunction(e) {
+            e.preventDefault();
             console.log(data)
             // fetch('https://dzilla.herokuapp.com/api/users/profile', {
             //     method: 'PUT', // or 'PUT'
