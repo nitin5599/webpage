@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- <title>React + Babel</title> -->
+</head>
+<body>
+    <div>
+        <h3>Customer Name</h3>
+        <label>Wallet</label>
+        <input type="text" name="wallet">
+        <button type="submit">submit</button>
+    </div>
+    <!-- <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script> -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.js"></script>
+    <!-- <script type="text/babel" src="app.jsx"></script> -->
+
+    <script type="text/javascript">
+        var apiUrl = 'https://pokeapi.co/api/v2/pokemon/ditto/';
+        fetch(apiUrl).then(response => {
+            return response.json();
+        }).then(data => {
+            console.log(data);
+        }).catch(err => {
+            console.log(err)
+        });
+    </script>
+
+</body>
+</html>
