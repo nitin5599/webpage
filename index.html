@@ -19,9 +19,9 @@
         console.log('id is ',id)    
         var apiUrl = 'https://dzilla.herokuapp.com/api/users/';
         fetch(apiUrl)
-        // .then(response => {
-        //     return response.json();
-        // })
+        .then(response => {
+            return response.json();
+        })
         .then(data => {
             console.log('response - ',data);
             data.forEach((item, index)=>{
