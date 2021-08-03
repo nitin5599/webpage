@@ -16,7 +16,7 @@
     <script src="https://unpkg.com/babel-standalone@6/babel.js"></script>
 
     <script type="text/javascript">
-
+    
         let params = new URLSearchParams(document.location.search.substring(1));
         var id = params.get("id");
         // window.document.getElementById('userid').innerHTML = id; 
@@ -40,12 +40,8 @@
             console.log(err)
         });
        
-        $('#submit').click(function(){
-        });
-        // const value = data[0].value;
         function myFunction() {
-            // e.preventDefault();
-            var eventCategory=$("input[name=wallet]").val();
+            var eventCategory=document.querySelector("input[name=wallet]").value;
             alert(eventCategory);
             // const data = { wallet: walletValue };
             // console.log(data)
