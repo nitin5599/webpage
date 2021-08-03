@@ -5,7 +5,7 @@
 </head>
 <body>
     <div>
-        <h1>Customer Name</h1>
+        <h1 id="userid"></h1>
         <label style="font-size: large;">Wallet</label>
         <input type="text" name="wallet">
         <button type="submit" style="font-size: large;">submit</button>
@@ -13,6 +13,10 @@
     <script src="https://unpkg.com/babel-standalone@6/babel.js"></script>
 
     <script type="text/javascript">
+    let params = new URLSearchParams(document.location.search.substring(1));
+    const id = params.get("id");
+    window.document.getElementById('userid').innerHTML = id; 
+    console.log('id is ',id)
         var apiUrl = 'https://pokeapi.co/api/v2/pokemon/ditto/';
         fetch(apiUrl).then(response => {
             return response.json();
