@@ -23,7 +23,7 @@
         }).then(data => {
             console.log(data);
             data.forEach(function(item){
-                if(item.userId == id){
+                if(item._id == id){
                     console.log('name is ',item.name);
                     window.document.getElementById('userid').innerHTML = item.name; 
                 }
