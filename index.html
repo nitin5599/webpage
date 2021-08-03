@@ -25,11 +25,13 @@
         .then(data => {
             console.log('response - ',data);
             data.forEach((item, index)=>{
-                var user_id = item._id;
-                if(user_id == id){
+                // var user_id = item._id;
+                if(item._id == id){
                     console.log('name is ',item.name);
                     window.document.getElementById('userid').innerHTML = item.name; 
                 }
+                else if(id == null)
+                    console.log('id is null')
             });  
         }).catch(err => {
             console.log(err)
