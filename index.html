@@ -22,12 +22,14 @@
             return response.json();
         }).then(data => {
             console.log(data);
-            data.forEach(function(item, index){
-                if(item[index]._id == id){
-                    console.log('name is ',item.name);
-                    window.document.getElementById('userid').innerHTML = item.name; 
+            // data.forEach(function(item, index){
+                for (let index = 0; index < data.length; index++) {
+                    if(data[index]._id == id){
+                        console.log('name is ',data[index].name);
+                        window.document.getElementById('userid').innerHTML = data[index].name; 
+                    }   
                 }
-            });
+            // });
   
         }).catch(err => {
             console.log(err)
