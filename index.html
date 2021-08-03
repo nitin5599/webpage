@@ -22,8 +22,8 @@
             return response.json();
         }).then(data => {
             console.log(data);
-            data.forEach(function(item){
-                if(item._id == id){
+            data.forEach(function(item, index){
+                if(item[index]._id == id){
                     console.log('name is ',item.name);
                     window.document.getElementById('userid').innerHTML = item.name; 
                 }
