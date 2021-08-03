@@ -41,10 +41,10 @@
         });
        
         function myFunction() {
-            var eventCategory=document.querySelector("input[name=wallet]").value;
-            alert(eventCategory);
-            // const data = { wallet: walletValue };
-            // console.log(data)
+            var val=document.querySelector("input[name=wallet]").value;
+            // alert(eventCategory);
+            const data = { wallet: val };
+            console.log(data)
             // fetch('https://dzilla.herokuapp.com/api/users/profile', {
             //     method: 'PUT', // or 'PUT'
             //     headers: {
