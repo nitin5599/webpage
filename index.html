@@ -37,7 +37,7 @@
             console.log(err)
         });
 
-        const data = { wallet: document.getElementsByName('wallet') };
+        const data = { wallet: document.getElementsByName('wallet').values() };
         // const value = data[0].value;
         function myFunction() {
             console.log(data)
