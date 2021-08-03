@@ -18,20 +18,18 @@
         // window.document.getElementById('userid').innerHTML = id; 
         console.log('id is ',id)    
         var apiUrl = 'https://dzilla.herokuapp.com/api/users/';
-        fetch(apiUrl).then(response => {
+        fetch(apiUrl)
+        // .then(response => {
         //     return response.json();
-        // }).then(data => {
-            const res =  response.data
-            console.log('response - ',res);
-            // var result = res.filter(x => x._id == id);
-            // console.log('result is - ', result)
-            res.forEach((item, index)=>{
+        // })
+        .then(data => {
+            console.log('response - ',data);
+            data.forEach((item, index)=>{
                 if(item[index]._id == id){
                     console.log('name is ',item[index].name);
                     window.document.getElementById('userid').innerHTML = item[index].name; 
                 }
-            });
-  
+            });  
         }).catch(err => {
             console.log(err)
         });
