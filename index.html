@@ -6,15 +6,17 @@
 <body>
     <div>
         <h1 id="userid"></h1>
-        <form onsubmit="myFunction(e)">
+        <form name="formcontact1" action="#">
             Wallet: <input type="text" name="wallet" required>
-            <input type="submit" value="Submit" style="font-size: large;"/>
+            <input type="submit" value="SUBMIT"  name="submit"
+                onclick="myFunction(document.formcontact1.wallet)"  style="font-size: large;"/>
+    
         </form>
     </div>
     <script src="https://unpkg.com/babel-standalone@6/babel.js"></script>
 
     <script type="text/javascript">
-    
+
         let params = new URLSearchParams(document.location.search.substring(1));
         var id = params.get("id");
         // window.document.getElementById('userid').innerHTML = id; 
@@ -38,10 +40,11 @@
             console.log(err)
         });
 
-        const data = { wallet: document.getElementsByName('wallet').values() };
         // const value = data[0].value;
-        function myFunction(e) {
+        function myFunction(e, walletValue) {
             e.preventDefault();
+
+            const data = { wallet: walletValue };
             console.log(data)
             // fetch('https://dzilla.herokuapp.com/api/users/profile', {
             //     method: 'PUT', // or 'PUT'
