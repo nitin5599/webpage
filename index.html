@@ -21,8 +21,9 @@
         fetch(apiUrl).then(response => {
         //     return response.json();
         // }).then(data => {
-            console.log('response - ', response.json());
-            var result = response.json().filter(x => x._id == id);
+            const res =  response.json()
+            console.log('response - ',res);
+            var result = res.filter(x => x._id == id);
             console.log('result is - ', result)
             // data.forEach(function(item, index){
             //     if(data[index]._id == id){
