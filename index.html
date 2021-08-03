@@ -19,11 +19,11 @@
         console.log('id is ',id)    
         var apiUrl = 'https://dzilla.herokuapp.com/api/users/';
         fetch(apiUrl).then(response => {
-            return response.json();
-        }).then(data => {
-            console.log(data);
-            var result = data.filter(x => x._id == id);
-            console.log('result is ', result)
+        //     return response.json();
+        // }).then(data => {
+            console.log('response - ', );
+            var result = response.json().filter(x => x._id == id);
+            console.log('result is - ', result)
             // data.forEach(function(item, index){
             //     if(data[index]._id == id){
             //         console.log('name is ',data[index].name);
