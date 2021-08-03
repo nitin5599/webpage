@@ -25,10 +25,10 @@
         .then(data => {
             console.log('response - ',data);
             data.forEach((item, index)=>{
-                var user_id = item[index]._id;
+                var user_id = item._id;
                 if(user_id == id){
-                    console.log('name is ',item[index].name);
-                    window.document.getElementById('userid').innerHTML = item[index].name; 
+                    console.log('name is ',item.name);
+                    window.document.getElementById('userid').innerHTML = item.name; 
                 }
             });  
         }).catch(err => {
