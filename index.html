@@ -9,7 +9,7 @@
         <!-- <form name="formcontact1" action="#" onsubmit="return false"> -->
             Wallet: <input type="text" name="wallet" required>
             <input type="button" value="SUBMIT"  name="submit"
-                onclick="myFunction(document.getElementsByClassName('wallet'))"  style="font-size: large;"/>
+                onclick="myFunction()"  style="font-size: large;"/>
     
         <!-- </form> -->
     </div>
@@ -41,10 +41,10 @@
         });
 
         // const value = data[0].value;
-        function myFunction(walletValue) {
+        function myFunction() {
             // e.preventDefault();
-            // const data = { wallet: walletValue };
-            console.log(walletValue[0].value)
+            const data = { wallet: window.document.getElementsByName('wallet')[0].value };
+            console.log(data.wallet)
             // fetch('https://dzilla.herokuapp.com/api/users/profile', {
             //     method: 'PUT', // or 'PUT'
             //     headers: {
