@@ -14,7 +14,7 @@
 
     <script type="text/javascript">
         let params = new URLSearchParams(document.location.search.substring(1));
-        const id = params.get("id");
+        var id = params.get("id");
         // window.document.getElementById('userid').innerHTML = id; 
         console.log('id is ',id)    
         var apiUrl = 'https://dzilla.herokuapp.com/api/users/';
@@ -25,7 +25,8 @@
         .then(data => {
             console.log('response - ',data);
             data.forEach((item, index)=>{
-                if(item[index]._id == id){
+                var user_id = item[index]._id;
+                if(user_id == id){
                     console.log('name is ',item[index].name);
                     window.document.getElementById('userid').innerHTML = item[index].name; 
                 }
