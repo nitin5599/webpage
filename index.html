@@ -8,7 +8,7 @@
         <h1 id="userid"></h1>
         <!-- <form name="formcontact1" action="#" onsubmit="return false"> -->
             Wallet: <input type="text" name="wallet" required>
-            <input type="button" value="SUBMIT"  name="submit"
+            <input type="button" value="SUBMIT" id="submit" name="submit"
                 onclick="myFunction()"  style="font-size: large;"/>
     
         <!-- </form> -->
@@ -39,12 +39,16 @@
         }).catch(err => {
             console.log(err)
         });
-
+       
+        $('#submit').click(function(){
+        });
         // const value = data[0].value;
         function myFunction() {
             // e.preventDefault();
-            const data = { wallet: window.document.getElementsByName('wallet')[0].value };
-            console.log(data.wallet)
+            var eventCategory=$("input[name=wallet]").val();
+            alert(eventCategory);
+            // const data = { wallet: walletValue };
+            // console.log(data)
             // fetch('https://dzilla.herokuapp.com/api/users/profile', {
             //     method: 'PUT', // or 'PUT'
             //     headers: {
