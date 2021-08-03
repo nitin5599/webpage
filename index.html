@@ -6,9 +6,10 @@
 <body>
     <div>
         <h1 id="userid"></h1>
-        <label style="font-size: large;">Wallet</label>
-        <input type="text" name="wallet">
-        <button type="submit" style="font-size: large;">submit</button>
+        <form onsubmit="myFunction()">
+            Wallet: <input type="text" name="wallet">
+            <input type="submit" value="Submit" style="font-size: large;"/>
+        </form>
     </div>
     <script src="https://unpkg.com/babel-standalone@6/babel.js"></script>
 
@@ -35,6 +36,10 @@
         }).catch(err => {
             console.log(err)
         });
+
+        function myFunction() {
+           alert("The form was submitted");
+        }
     </script>
 
 </body>
