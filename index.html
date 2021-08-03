@@ -13,11 +13,11 @@
     <script src="https://unpkg.com/babel-standalone@6/babel.js"></script>
 
     <script type="text/javascript">
-    let params = new URLSearchParams(document.location.search.substring(1));
-    const id = params.get("id");
-    window.document.getElementById('userid').innerHTML = id; 
-    console.log('id is ',id)
-        var apiUrl = 'https://pokeapi.co/api/v2/pokemon/ditto/';
+        let params = new URLSearchParams(document.location.search.substring(1));
+        const id = params.get("id");
+        window.document.getElementById('userid').innerHTML = id; 
+        console.log('id is ',id)    
+        var apiUrl = 'https://dzilla.herokuapp.com/api/users/';
         fetch(apiUrl).then(response => {
             return response.json();
         }).then(data => {
