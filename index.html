@@ -7,7 +7,7 @@
     <div>
         <h1 id="userid"></h1>
         <form onsubmit="myFunction()">
-            Wallet: <input type="text" name="wallet">
+            Wallet: <input type="text" name="wallet" required>
             <input type="submit" value="Submit" style="font-size: large;"/>
         </form>
     </div>
@@ -37,8 +37,25 @@
             console.log(err)
         });
 
+        const data = { wallet: document.getElementsByName('wallet')[0].value };
+        
         function myFunction() {
-           alert("The form was submitted");
+            alert(data)
+            // fetch('https://dzilla.herokuapp.com/api/users/profile', {
+            //     method: 'PUT', // or 'PUT'
+            //     headers: {
+            //         'Content-Type': 'application/json',
+            //     },
+            //     body: JSON.stringify(data),
+            // })
+            // .then(response => response.json())
+            // .then(data => {
+            //     console.log('Success:', data);
+            // })
+            // .catch((error) => {
+            //     console.error('Error:', error);
+            // });
+
         }
     </script>
 
