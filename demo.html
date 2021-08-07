@@ -16,7 +16,7 @@
     <script src="https://unpkg.com/babel-standalone@6/babel.js"></script>
 
     <script type="text/javascript">
-    
+    var userdata = {};
         let params1 = new URLSearchParams(document.location.search.substring(1));
         var id = params1.get("id");
         let params2 = new URLSearchParams(document.location.search.substring(2));
@@ -24,6 +24,7 @@
         // window.document.getElementById('userid').innerHTML = id; 
         console.log('id is ',id)    
         var apiUrl = 'https://dzilla.herokuapp.com/api/users/';
+        
         fetch(apiUrl)
         .then(response => {
             return response.json();
@@ -33,6 +34,7 @@
             data.forEach((item, index)=>{
                 if(item._id == id){
                     console.log('name is ',item.name);
+                    userdata = item;
                     window.document.getElementById('userid').innerHTML = item.name; 
                 }
                 else if(id == null)
@@ -45,10 +47,11 @@
         function myFunction() {
             var val=document.querySelector("input[name=wallet]").value;
             // alert(eventCategory);
-            const data = { wallet: val };
+            const data = { wallet: val, email: userdata.email, name: userdata.name, pic: userdata.pic, id: userdata._id };
             // console.log(data)
             fetch('https://dzilla.herokuapp.com/api/users/profile', {
                 method: 'POST', // or 'PUT'
+
                 headers: {
                     'Content-Type': 'application/json',
                     "Authorization" : token
