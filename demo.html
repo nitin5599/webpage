@@ -47,9 +47,9 @@
         function myFunction() {
             var val=document.querySelector("input[name=wallet]").value;
             // alert(eventCategory);
-            const data = {...userdata, wallet: val};
-            // console.log(data)
-            fetch('https://dzilla.herokuapp.com/api/users/profile?id=' + userdata._id , {
+            const data = {wallet: val};
+            console.log(data)
+            fetch('https://dzilla.herokuapp.com/api/users/profile/' + userdata._id , {
                 method: 'POST', // or 'PUT'
                 headers: {
                     'Content-Type': 'application/json',
